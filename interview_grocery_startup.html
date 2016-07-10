@@ -1,0 +1,108 @@
+<html>
+  <head>
+    <base href=".">
+    <title>or-tools API test</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Custom styling -->
+    <link rel="stylesheet" type="text/css" href="bower_components/semantic/dist/semantic.min.css">
+    <link rel="stylesheet" href="bower_components/Tangle/TangleKit/TangleKit.css">
+    <link rel="stylesheet" href="css/interview_grocery_startup.css">
+    <!-- 1. Load libraries -->
+     <!-- Polyfill(s) for older browsers -->
+    <!-- Custom js -->
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/semantic/dist/semantic.min.js"></script>
+    <script src="bower_components/Tangle/Tangle.js"></script>
+    <script src="bower_components/Tangle/TangleKit/mootools.js"></script>
+    <script src="bower_components/Tangle/TangleKit/sprintf.js"></script>
+    <script src="bower_components/Tangle/TangleKit/BVTouchable.js"></script>
+    <script src="bower_components/Tangle/TangleKit/TangleKit.js"></script>
+    <script src="js/interview_grocery_startup.js"></script>
+  </head>
+  <body>
+
+  <div id="problem" class="ui container">
+
+    <h1>Grocery shopping</h1>
+    <p>So you walk into a grocery store with a grocery bag and some cash, to buy groceries for a week.</p>
+
+    <p>Now, a couple problems</p>
+    <ol>
+      <li>your bag can hold <span class="TKAdjustableNumber" data-var="maxWeight" data-step="1" data-min="1"></span> pounds.</li>
+      <li>You have $<span class="TKAdjustableNumber" data-var="maxCost" data-step="10" data-min="1"></span></li>
+      <li>You need about <span class="TKAdjustableNumber" data-var="minCalsDay" data-step="100" data-min="100"></span> calories a day, so a weekly shopping trip is about <span class="" data-var="minCals" data-step="100" data-min="0"></span> calories.</li>
+      <li>You must purchase at least <span class="TKAdjustableNumber" data-var="minShopOunces" data-step="0.5" data-min="0.5"></span> ounces of each grocery item.</li>
+    </ol>
+
+    <p>Here's your dataset:</p>
+
+    <div class="ui two column centered grid">
+      <div class="column">
+        <table id="grocerytable" class="ui celled striped table">
+          <thead>
+            <tr>
+            <th class="food">Food Name</th>
+            <th class="calories">Calories</th>
+            <th class="price">Price</th>
+          </tr></thead>
+          <tbody>
+          </tbody>
+        </table>
+        </div>
+    </div>
+
+  <div class="ui divider"></div>
+
+  <div id="goal" class="ui form">
+    <div class="inline fields">
+      <label>Your goal:</label>
+      <div class="field">
+        <div class="ui radio checkbox">
+          <input type="radio" name="what" checked="checked" value="cost">
+          <label>Minimum cost</label>
+        </div>
+      </div>
+      <div class="field">
+        <div class="ui radio checkbox">
+          <input type="radio" name="what"  value="gluten-free">
+          <label>Gluten-free (minimum bread)</label>
+        </div>
+      </div>
+      <div class="field">
+        <div class="ui radio checkbox">
+          <input type="radio" name="what"  value="all-the-money">
+          <label>Splurge (use all the money)</label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <div class="ui two column centered grid">
+      <div class="column">
+        <div id="answer" class="ui segment">
+          <div class="ui active dimmer">
+            <div class="ui text loader">Loading</div>
+          </div>
+          <h2 id="result_status" class="title"></h2>
+          <table id="variablestable" class="ui inverted green table">
+            <thead>
+              <tr><th>Food</th>
+              <th>Quantity (pounds)</th>
+            </tr></thead>
+            <tbody>
+            </tbody>
+          </table>
+          <div>Total Cost: $<span id="total_cost"></span></div>
+          <div>Total Weight: <span id="variables_sum"></span> pounds</div>
+          <div>Calc time: <span id="wall_time"></span>ms</div>
+        </div>
+      </div>
+    </div>
+
+
+
+  </div>
+  </body>
+</html>

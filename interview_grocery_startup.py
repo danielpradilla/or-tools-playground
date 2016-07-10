@@ -47,29 +47,26 @@ http://www.jasq.org/just-another-scala-quant/new-agey-interviews-at-the-grocery-
 
 from ortools.linear_solver import pywraplp
 
-maxWeight = 10
-maxCost = 100
-minCals = 14000
-minShop = 4/16.0 #16 ounces per pound
-
-#[name, calories, prices]
-food =  [['ham',650, 4],
-		['lettuce',70,1.5],
-		['cheese',1670,5],
-		['tuna',830,20],
-		['bread',1300,1.20]]
 
 
-def configure_variables(solver):
+
+def configure_variables(cfg, solver):
+	food = cfg['food']
+	minShop = cfg['minShop']
 	variable_list = [[]] * len(food)
 	for i in range(0, len(food)):
 		#you must buy at least minShop of each
-		variable_list[i] = solver.NumVar(minShop, solver.infinity(), food[i][0])
+		variable_list[i] = solver.NumVar(minShop, solver.infinity(), str(food[i][0]))
 
 	return variable_list
 
 
-def configure_constraints(solver, variable_list):
+def configure_constraints(cfg, solver, variable_list):
+	food = cfg['food']
+	maxWeight = cfg['maxWeight']
+	maxCost = cfg['maxCost']
+	minCals = cfg['minCals']
+
 	#Define the constraints	
 	constraint_list=[]
 	#Constraint 1: totalWeight<maxWeight
@@ -91,7 +88,10 @@ def configure_constraints(solver, variable_list):
 	return constraint_list
 
 
-def configure_objective(what, solver, variable_list, constraint_list):
+def configure_objective(what, cfg, solver, variable_list, constraint_list):
+	
+	food = cfg['food']
+
 	objective = solver.Objective()
 
 	if (what=='cost'):
@@ -107,11 +107,19 @@ def configure_objective(what, solver, variable_list, constraint_list):
 		objective.SetMaximization()
 
 	elif(what=='fat-free'):
-		# Define our objective: cutting on ham, cheese and tuna
+		# Define our objective: cutting on ham and cheese
 		for i in range(0, len(food)):
-			if (food[i][0] in ['ham','cheese','tuna']):
+			if (food[i][0] in ['ham','cheese']):
 				objective.SetCoefficient(variable_list[i],1)
 		objective.SetMinimization()
+
+	elif(what=='gluten-free'):
+		# Define our objective: cutting on ham, cheese and tuna
+		for i in range(0, len(food)):
+			if (food[i][0] in ['bread']):
+				objective.SetCoefficient(variable_list[i],1)
+		objective.SetMinimization()
+
 	else:
 		# Define our objective: use all the money
 		for i in range(0, len(food)):
@@ -134,8 +142,11 @@ def print_solution(solver,result_status,variable_list,constraint_list):
 		# The objective value of the solution.
 		print(('Optimal objective value = %f' % solver.Objective().Value()))
 		# The value of each variable in the solution.
+		var_sum=0
 		for variable in variable_list:
 			print(('%s = %f' % (variable.name(), variable.solution_value())))
+			var_sum+=variable.solution_value()
+		print(('Variable sum = %f' % var_sum));
 
 		print('Advanced usage:')
 		print(('Problem solved in %d iterations' % solver.iterations()))
@@ -149,23 +160,41 @@ def print_solution(solver,result_status,variable_list,constraint_list):
 		      '               activity = %f' %
 		      (i, constraint.dual_value(), activities[constraint.index()])))
 
-	elif solve_status == assignment.INFEASIBLE:
+	elif result_status == solver.INFEASIBLE:
    		print('No solution found.')
-  	elif solve_status == assignment.POSSIBLE_OVERFLOW:
+  	elif result_status == solver.POSSIBLE_OVERFLOW:
 		print('Some inputs are too large and may cause an integer overflow.')
 
-
-def main():
+def main(cfg, what):
 
 	solver = pywraplp.Solver('SolveSimpleSystem',pywraplp.Solver.GLOP_LINEAR_PROGRAMMING)
 
-	variable_list = configure_variables(solver)
-	constraint_list = configure_constraints(solver, variable_list)
-	objective = configure_objective('cost', solver, variable_list, constraint_list)
+	variable_list = configure_variables(cfg, solver)
+	constraint_list = configure_constraints(cfg, solver, variable_list)
+	objective = configure_objective(what, cfg, solver, variable_list, constraint_list)
 
 	result_status = solve(solver)
 
 	print_solution(solver, result_status, variable_list, constraint_list)
 
+	return {'variable_list':variable_list, 
+			'constraint_list': constraint_list, 
+			'objective':objective, 
+			'solver':solver, 
+			'result_status': result_status}
+
 if __name__ == '__main__':
-  main()
+
+
+	cfg = {'maxWeight': 10,
+			'maxCost': 100,
+			'minCals': 14000,
+			'minShop': 4/16.0, #16 ounces per pound
+			'food':  [['ham',650, 4],
+						['lettuce',70,1.5],
+						['cheese',1670,5],
+						['tuna',830,20],
+						['bread',1300,1.20]]
+		}
+
+	main(cfg,'cost')

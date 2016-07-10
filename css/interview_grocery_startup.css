@@ -1,0 +1,16 @@
+
+#grocerytable .calories {
+	text-align: right;
+}
+
+#grocerytable .price {
+	text-align: right;
+}
+
+td.price:before { 
+	content:'$ '; 
+}
+
+.title {
+	text-transform: capitalize;
+}
