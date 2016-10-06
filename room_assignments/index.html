@@ -1,0 +1,103 @@
+<html>
+  <head>
+    <base href=".">
+    <title>or-tools API test</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Custom styling -->
+    <link rel="stylesheet" type="text/css" href="../bower_components/semantic/dist/semantic.min.css">
+    <link rel="stylesheet" href="../bower_components/Tangle/TangleKit/TangleKit.css">
+    <link rel="stylesheet" href="css/room_assignments.css">
+    <!-- 1. Load libraries -->
+     <!-- Polyfill(s) for older browsers -->
+    <!-- Custom js -->
+    <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="../bower_components/semantic/dist/semantic.min.js"></script>
+    <script src="../bower_components/Tangle/Tangle.js"></script>
+    <script src="../bower_components/Tangle/TangleKit/mootools.js"></script>
+    <script src="../bower_components/Tangle/TangleKit/sprintf.js"></script>
+    <script src="../bower_components/Tangle/TangleKit/BVTouchable.js"></script>
+    <script src="../bower_components/Tangle/TangleKit/TangleKit.js"></script>
+    <script src="js/room_assignments.js"></script>
+  </head>
+  <body>
+
+  <div id="problem" class="ui container">
+
+    <h1>Room Assignment</h1>
+    <p>Below is the information of the rooms available on a particular day and the meetings that need to be assigned to rooms</p>
+
+    <div class="ui two column centered grid">
+      <div class="column">
+        <h2>Rooms</h2>
+        <table id="rooms_table" class="ui celled striped table">
+          <thead>
+            <tr>
+            <th class="room">Room</th>
+            <th class="capacity">Capacity</th>
+          </tr></thead>
+          <tbody data-name="rooms">
+          </tbody>
+        </table>
+      </div>
+      <div class="column">
+        <h2>Meetings</h2>
+        <table id="meetings_table" class="ui celled striped table">
+          <thead>
+            <tr>
+            <th class="meeting_number">Meeting</th>
+            <th class="name">Client</th>
+            <th class="attendees">Attendees</th>
+          </tr></thead>
+          <tbody>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  <p>You want to optimize the usage of the meeting rooms and avoid assigning meetings with small attendance to large rooms</p>
+
+  <div class="ui divider"></div>
+
+  <div id="goal" class="ui form">
+    <div class="inline fields">
+      <label>Your goal:</label>
+      <div class="field">
+        <div class="ui radio checkbox">
+          <input type="radio" name="what" checked="checked" value="space">
+          <label>Minimize free space</label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ui two column centered grid">
+    <div class="column">
+      <div id="get_answer">
+          <button class="positive massive ui button">Calculate Assignments</button>
+      </div>
+      <div id="answer" class="ui segment">
+        <div class="ui active dimmer">
+          <div class="ui text loader">Loading</div>
+        </div>
+        <h2 id="result_status" class="title"></h2>
+        <table id="answer_table" class="ui inverted green table">
+          <thead>
+            <tr><th>Client</th>
+            <th>Assigned Room</th>
+          </tr></thead>
+          <tbody>
+          </tbody>
+        </table>
+        <div>Space utilization factor: <span id="objective_value"></span></div>
+        <div>Calc time: <span id="wall_time"></span>ms</div>
+      </div>
+    </div>
+  </div>
+
+
+
+  </div>
+  </body>
+</html>
