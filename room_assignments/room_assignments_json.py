@@ -55,7 +55,7 @@ if __name__ == '__main__':
 					['II',22],
 					['III',198],
 					['IV',61]],
-			'meetings':  [[1,'UNHCHR', 50],
+			'meetings':  [[1,'UNHCR', 50],
 							[2,'Town Hall', 150],
 							[3,'UNCTAD', 68],
 							[4,'CAT', 15]]

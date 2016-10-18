@@ -9,7 +9,7 @@ roomAssignments.payload = {
 												['II',22],
 												['III',198],
 												['IV',61]],
-							'meetings':  [[1,'UNHCHR', 50],
+							'meetings':  [[1,'UNHCR', 50],
 														[2,'Town Hall', 150],
 														[3,'UNCTAD', 68],
 														[4,'CAT', 15]]
@@ -30,7 +30,8 @@ roomAssignments.fillRoomsTable = function() {
 				dataVar: 'rooms',
 				dataMin: 0,
 				dataMax: 100000,
-				dataStep: 1		
+				dataStep: 1,
+				value: prop		
 			};
 			switch(j){
 				case 0:
@@ -66,7 +67,8 @@ roomAssignments.fillMeetingsTable = function() {
 				dataVar: 'meetings',
 				dataMin: 0,
 				dataMax: 100000,
-				dataStep: 1		
+				dataStep: 1,
+				value: prop
 			};
 			switch(j){
 				case 0:
@@ -92,6 +94,22 @@ roomAssignments.fillMeetingsTable = function() {
 };
 
 roomAssignments.getCellHTML = function(c, i, j) {
+	var rtn='';
+	rtn +='<td class="'+c.myClass+'" >';
+	if (c.tangleClass!=='') {
+		rtn+='<div class="ui tiny input">' +
+			'<input class="update-trigger" type="text" ' + 
+			'data-var="'+[c.dataVar,i,j].join('_')+'" '+
+			'value="'+c.value+'"'
+			'/>' +
+			'</div>';
+	} else {
+		rtn += c.value;
+	}
+	rtn += '</td>';
+
+	return rtn;
+	/*
 	return '<td class="'+c.myClass+'" >'+
 			'<span class="' + c.tangleClass + '"' +
 			//data-var is dataVar_row_column of the table 
@@ -101,9 +119,9 @@ roomAssignments.getCellHTML = function(c, i, j) {
 			'data-step="'+c.dataStep+'" '+
 			// 'data-format="%.0f" '+
 			'>'+
-			// ''+prop+
 			'</span>'+
 			'</td>';
+	*/
 };
 
 
@@ -126,8 +144,17 @@ roomAssignments.getValue = function(cfgItem, pointer) {
 };
 
 roomAssignments.setValue = function(cfgItem, pointer, value) {
-	var coord=this.getRowCol(pointer);
-	this.payload.cfg[cfgItem][coord[0]][coord[1]] = value;
+	if (typeof value !== 'undefined'){
+		var coord=this.getRowCol(pointer);
+		if (!this.payload.cfg[cfgItem][coord[0]]){
+			this.payload.cfg[cfgItem][coord[0]]=[];
+		}
+		if (!isNaN(value)){
+			value = +value;
+		}
+		this.payload.cfg[cfgItem][coord[0]][coord[1]] = value;
+	}
+	return false;
 };
 
 roomAssignments.to = true;
@@ -140,7 +167,7 @@ roomAssignments.throttle = function(func, delay){
 
 
 roomAssignments.tangleInit = function() {
-	var tangle = new Tangle (document.getElementById('problem'), {
+	this.tangle = new Tangle (document.getElementById('problem'), {
 	    initialize: function () {
 	    	var that = this;
 	    	//go through the array of the configuration 
@@ -156,24 +183,25 @@ roomAssignments.tangleInit = function() {
 	    		}
 	    	});
 	    },
-	    update: function () {
+	    update: function(){
 	    	var that = this;
-	    	//go through the array of the configuration 
-	    	Object.keys(roomAssignments.payload.cfg).forEach(function(key){
-	    		//if item is an array
-	    		if (roomAssignments.isArray(roomAssignments.payload.cfg[key])) {
-	    			//go through the array setting variables
+			//go through the array of the configuration 
+			Object.keys(roomAssignments.payload.cfg).forEach(function(key){
+				//if item is an array
+				if (roomAssignments.isArray(roomAssignments.payload.cfg[key])) {
+					//go through the array setting variables
 			    	roomAssignments.payload.cfg[key].forEach(function(item, i){
 			    		item.forEach(function(prop, j){
 			    			roomAssignments.setValue(key, [key,i,j].join('_'), that[[key,i,j].join('_')]);
 			    		});
-			    	});	    			
-	    		}
-	    	});
-	    	roomAssignments.throttle(roomAssignments.post, 500);
+			    	});
+				}
+			});
+			roomAssignments.throttle(roomAssignments.post, 500);
 	    }
 	});
 };
+
 
 roomAssignments.isArray = function(variable){
 	return (Object.prototype.toString.call( variable ) === '[object Array]');
@@ -215,10 +243,58 @@ roomAssignments.fillAnswerTable = function(data) {
 	jQuery('#answer .dimmer').removeClass('active');
 };
 
+
+roomAssignments.addInput = function(tableName) {
+	var inputHTML = '<tr class="ui tiny form">';
+	var table = jQuery('#'+tableName);
+	var key = tableName.substring(0,tableName.indexOf('_'))
+	var rowCount = table.find('tr').length - 1 ;
+	if (tableName==='rooms_table'){
+		inputHTML +='<td><div class="input field"><input type="text" data-var="'+key+'_'+rowCount+'_0"/></div></td>'+
+					'<td><div class="input field"><input class="update-trigger" type="text" data-var="'+key+'_'+rowCount+'_1"/></div></td>';
+	}
+
+	else if (tableName==='meetings_table'){
+		inputHTML +='<td><div class=""><span data-var="'+key+'_'+rowCount+'_0"></span></div></td>'+
+					'<td><div class="input field"><input type="text" data-var="'+key+'_'+rowCount+'_1"/></div></td>'+
+					'<td><div class="input field"><input class="update-trigger" type="text" data-var="'+key+'_'+rowCount+'_2"/></div></td>';
+	}
+	inputHTML += '</tr>';
+	table.append(inputHTML); 
+
+	jQuery(".update-trigger").change(function(){ roomAssignments.fieldChange(this);});
+
+	jQuery(".update-trigger").keydown(roomAssignments.fieldKeyDown);
+
+	return false;
+};
+
+roomAssignments.fieldChange = function(el) {
+
+	jQuery(el).addClass('changed');
+	var variable = jQuery(el).data('var');
+	var key = variable.substring(0,variable.indexOf('_'));
+    jQuery('#'+key+'_table input').each(function(i, field){
+    	var pointer = jQuery(this).data('var');
+    	roomAssignments.setValue(key, pointer, jQuery(this).val());
+    });
+    roomAssignments.throttle(roomAssignments.post, 500);
+}
+
+roomAssignments.fieldKeyDown = function(evt) {
+	if ( event.which == 13 ) {
+		jQuery('#answer').show();
+		jQuery('#get_answer').hide();
+  	} else {
+  		jQuery('#answer').hide();
+		jQuery('#get_answer').show();
+  	}
+};
+
 roomAssignments.post = function() {
 
 	jQuery('#answer .dimmer').addClass('active');
-
+console.log(roomAssignments.payload);
     jQuery.ajax({
       type: "POST",
       url: "http://localhost:18000/room_assignments_api",
@@ -245,6 +321,10 @@ jQuery(document).ready(function(){
 	roomAssignments.fillMeetingsTable();
 	roomAssignments.tangleInit();
 
+	jQuery('.update-trigger').change(function(){ roomAssignments.fieldChange(this);});
+	jQuery(".update-trigger").keydown(roomAssignments.fieldKeyDown);
+
+
 	jQuery("#goal input[type='radio']").change(function(value){
 		roomAssignments.payload.cfg.what = jQuery(this).val();
 		roomAssignments.post();
@@ -253,6 +333,10 @@ jQuery(document).ready(function(){
 	jQuery("#get_answer button").click(function(evt){
 		jQuery('#get_answer').hide();
 		jQuery('#answer').show();
+	});
+
+	jQuery(".add-input").click(function(evt){
+		roomAssignments.addInput(jQuery(this).data('target'));
 	});
 
 });

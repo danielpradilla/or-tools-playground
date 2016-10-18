@@ -3,3 +3,8 @@
 .title {
 	text-transform: capitalize;
 }
+
+.ui .input input.changed {
+	background: #FFF8DB;
+	box-shadow: 0 0 0 1px #B58105 inset,0 0 0 0 transparent;
+}

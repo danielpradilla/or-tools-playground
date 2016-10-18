@@ -12,7 +12,7 @@ ALLOWED_ORIGINS = 'http://localhost'
 class CorsMiddleware(object):
 	def process_request(self, request, response):
 		origin = request.get_header('Origin')
-		if origin in ALLOWED_ORIGINS:
+		if origin is not None and origin in ALLOWED_ORIGINS:
 			response.set_header('Access-Control-Allow-Origin', origin)
 		response.set_header('Access-Control-Allow-Origin', '*')
 

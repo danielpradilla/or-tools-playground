@@ -32,7 +32,10 @@ def configure_variables(cfg, solver):
 	#variable_matrix will be a matrix of variables following the pattern [meeting_i][room_j]
 	meetings = cfg['meetings']
 	rooms = cfg['rooms']
-	variable_matrix = [[0 for i in range(len(meetings))] for j in range(len(rooms))]
+	if (len(meetings)>len(rooms)):
+		variable_matrix = [[0 for i in range(len(meetings))] for j in range(len(rooms))]
+	else:
+		variable_matrix = [[0 for i in range(len(rooms))] for j in range(len(meetings))]		
 	variable_list = []
 	for i in range(0, len(meetings)):
 		for j in range(0, len(rooms)):
@@ -58,7 +61,7 @@ def configure_constraints(cfg, solver, variable_matrix):
 	#no two meetings in the same room
 	#sum of all the meetings per room = 1
 	for j in range(0, len(rooms)):
-		constraint_list.append(solver.Constraint(1,1))
+		constraint_list.append(solver.Constraint(0,1))
 		for i in range(0, len(meetings)):
 			constraint_list[-1].SetCoefficient(variable_matrix[i][j],1)
 
@@ -158,7 +161,7 @@ if __name__ == '__main__':
 					['II',22],
 					['III',198],
 					['IV',61]],
-			'meetings':  [[1,'UNHCHR', 50],
+			'meetings':  [[1,'UNHCR', 50],
 							[2,'Town Hall', 150],
 							[3,'UNCTAD', 68],
 							[4,'CAT', 15]]

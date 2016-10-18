@@ -1,0 +1,23 @@
+{
+  "name": "or-tools-playground",
+  "homepage": "https://github.com/danielpradilla/or-tools-playground",
+  "authors": [
+    "Daniel Pradilla <info@danielpradilla.info>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.0.0",
+    "semantic": "Semantic-UI#^2.2.1"
+  }
+}
