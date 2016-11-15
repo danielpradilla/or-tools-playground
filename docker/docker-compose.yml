@@ -1,0 +1,9 @@
+version: '2'
+services:
+    or-tools-gunicorn:
+      build: .
+      ports:
+        - '5000:80'
+      volumes:
+        - ../www:/app/www
+    

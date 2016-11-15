@@ -1,0 +1,1 @@
+docker run --rm -v `pwd`/www:/app/www --name or-tools-gunicorn -p 5000:80 danielpradilla/or-tools &

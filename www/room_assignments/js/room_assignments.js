@@ -297,7 +297,7 @@ roomAssignments.post = function() {
 console.log(roomAssignments.payload);
     jQuery.ajax({
       type: "POST",
-      url: "http://localhost:18000/room_assignments_api",
+      url: "/gunicorn/room_assignments_api",
       dataType: "json",
       data: JSON.stringify(roomAssignments.payload),
 

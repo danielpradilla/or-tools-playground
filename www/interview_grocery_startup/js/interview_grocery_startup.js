@@ -188,7 +188,7 @@ igs.post = function() {
 
     jQuery.ajax({
       type: "POST",
-      url: "http://localhost:18000/igsapi",
+      url: "/gunicorn/igsapi",
       dataType: "json",
       data: JSON.stringify(igs.payload),
 
