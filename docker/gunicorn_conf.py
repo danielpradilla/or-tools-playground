@@ -33,7 +33,7 @@ pidfile = '/app/run/gunicorn.pid'
 # timeout = 28
 
 # only use for development:
-# reload = True
+reload = True
 
 # for performance:
 keepalive = 3

@@ -262,9 +262,9 @@ roomAssignments.addInput = function(tableName) {
 	inputHTML += '</tr>';
 	table.append(inputHTML); 
 
-	jQuery(".update-trigger").change(function(){ roomAssignments.fieldChange(this);});
+	table.find(".update-trigger").change(function(){ roomAssignments.fieldChange(this);});
 
-	jQuery(".update-trigger").keydown(roomAssignments.fieldKeyDown);
+	table.find(".update-trigger").keydown(roomAssignments.fieldKeyDown);
 
 	return false;
 };
