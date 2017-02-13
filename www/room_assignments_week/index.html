@@ -22,10 +22,13 @@
     <script src="js/room_assignments_week.js"></script>
   </head>
   <body>
+  <div class="ui inverted menu">
+    <div class="ui container">
+      <h1 class="header item">Meetings Calendar Problem</h1>
+    </div>
+  </div>
+  <div id="problem" class="ui main container">
 
-  <div id="problem" class="ui container">
-
-    <h1>Meetings Calendar Problem</h1>
     <p>Below is the information of the rooms available for a 5-day work week and the meetings that need to be held throgout</p>
 
     <div class="ui two column centered grid">
@@ -61,6 +64,8 @@
         </button>
  -->      </div>
     </div>
+    <div class="ui divider"></div>
+    <p>Below is the meeting schedule requested by each client</p>
     <div class="ui one column centered grid">
     <div class="column">
       <h2>Schedule</h2>
@@ -76,10 +81,11 @@
     </div>
     </div>
 
-  <div class="ui divider"></div>
+  <h2 class="ui dividing header">Goals</h2>
   <p>You want to optimize the usage of the meeting rooms and avoid assigning meetings with small attendance to large rooms</p>
+  <p>Meetings spanning multiple days should be assigned to the same room each day</p>
 
-  <div id="goal" class="ui form">
+  <div id="goal" class="ui form" style="visibility: hidden;">
     <div class="inline fields">
       <label>Your goal:</label>
       <div class="field">

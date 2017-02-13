@@ -1,0 +1,105 @@
+<html>
+  <head>
+    <base href=".">
+    <title>or-tools test</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Custom styling -->
+    <link rel="stylesheet" type="text/css" href="../bower_components/semantic/dist/semantic.min.css">
+    <link rel="stylesheet" href="css/room_assignments_month.css"> 
+    <link rel="stylesheet" type="text/css" href="js/dhtmlxGrid_v50_std/codebase/dhtmlxgrid.css">
+    <link rel="stylesheet" type="text/css" href="js/dhtmlxGrid_v50_std/skins/web/dhtmlxgrid.css"/>
+    <!-- 1. Load libraries -->
+    <!-- Custom js -->
+    <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="../bower_components/semantic/dist/semantic.min.js"></script>
+    <script src="js/dhtmlxGrid_v50_std/codebase/dhtmlxgrid.js"></script>
+    <script src="js/room_assignments_month.js"></script>
+  </head>
+  <body onload="ram.init()">
+  <div class="ui inverted menu">
+    <div class="ui container">
+      <h1 class="header item">Meetings Calendar Problem</h1>
+    </div>
+  </div>
+  <div id="problem" class="ui main container">
+
+    <p>Below is the information of the rooms available for a 5-day work week and the meetings that need to be held throgout</p>
+
+    <div class="ui two column centered grid">
+      <div class="column">
+        <h2>Rooms</h2>
+        <div id="rooms_table" class="ra-grid"></div>
+      </div>
+      <div class="column">
+        <h2>Meetings</h2>
+        <div id="rooms_table" class="ra-grid"></div>
+      </div>
+    </div>
+    <div class="ui divider"></div>
+    <p>Below is the meeting schedule requested by each client</p>
+    <div class="ui one column centered grid">
+    <div class="column">
+      <h2>Schedule</h2>
+      <table id="schedule_table" class="ui celled striped table">
+          <thead>
+            <tr>
+            <th></th>
+            <th class="meetings center aligned">Meetings</th>
+          </tr></thead>
+          <tbody data-name="schedules">
+          </tbody>
+      </table>
+    </div>
+    </div>
+
+  <h2 class="ui dividing header">Goals</h2>
+  <p>You want to optimize the usage of the meeting rooms and avoid assigning meetings with small attendance to large rooms</p>
+  <p>Meetings spanning multiple days should be assigned to the same room each day</p>
+
+  <div id="goal" class="ui form" style="visibility: hidden;">
+    <div class="inline fields">
+      <label>Your goal:</label>
+      <div class="field">
+        <div class="ui radio checkbox">
+          <input type="radio" name="what" checked="checked" value="space">
+          <label>Minimize free space</label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ui two column centered grid">
+    <div class="column">
+      <div id="get_answer">
+          <button class="positive massive ui button">Calculate Calendar</button>
+      </div>
+      <div id="answer" class="ui segment">
+        <div class="ui active dimmer">
+          <div class="ui text loader">Loading</div>
+        </div>
+        <h2 id="result_status" class="title"></h2>
+        <table id="answer_table" class="ui inverted green definition table">
+          <thead>
+            <tr>
+              <th></th>
+              <th class="rooms center aligned">Rooms</th>
+            </tr>
+            <tr>
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+        <div>Space utilization factor: <span id="objective_value"></span></div>
+        <div>Calc time: <span id="wall_time"></span>ms</div>
+      </div>
+    </div>
+  </div>
+
+
+
+  </div>
+  </body>
+</html>

@@ -1,0 +1,28 @@
+
+.title {
+	text-transform: capitalize;
+}
+
+.ui .input input.changed {
+	background: #FFF8DB;
+	box-shadow: 0 0 0 1px #B58105 inset,0 0 0 0 transparent;
+}
+
+.ra-grid {
+	min-height:400px;
+	min-width:450px;
+	overflow:hidden;
+}
+
+h1 {
+	font-size:1.5rem;
+}
+
+h2 {
+	font-size:1.25rem;
+}
+
+.ui.menu {
+	height: 3rem;
+}
+

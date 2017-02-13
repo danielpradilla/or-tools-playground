@@ -22,10 +22,13 @@
     <script src="js/room_assignments.js"></script>
   </head>
   <body>
-
+  <div class="ui inverted menu">
+    <div class="ui container">
+      <h1 class="header item">Room Assignment Problem</h1>
+    </div>
+  </div>
   <div id="problem" class="ui container">
 
-    <h1>Room Assignment Problem</h1>
     <p>Below is the information of the rooms available on a particular day and the meetings that need to be assigned to rooms</p>
 
     <div class="ui two column centered grid">
@@ -62,11 +65,12 @@
       </div>
     </div>
 
+  <h2 class="ui dividing header">Goals</h2>
   <p>You want to optimize the usage of the meeting rooms and avoid assigning meetings with small attendance to large rooms</p>
 
   <div class="ui divider"></div>
 
-  <div id="goal" class="ui form">
+  <div id="goal" class="ui form" style="visibility: hidden;">
     <div class="inline fields">
       <label>Your goal:</label>
       <div class="field">

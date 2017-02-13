@@ -12,7 +12,7 @@ docker-compose -f docker/docker-compose.yml run
 or 
 
 From within the directory
-docker build -t danielpradilla/or-tools .
+docker build --no-cache -t danielpradilla/or-tools .
 
 and then from the root of the application
 docker run -v `pwd`/www:/app/www -p 5000:80 --name or-tools-gunicorn  danielpradilla/or-tools 

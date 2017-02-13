@@ -209,6 +209,13 @@ jQuery(document).ready(function(){
 	igs.post();
 	igs.fillGroceryTable();
 
+	jQuery('#answer').hide();
+
+	jQuery("#get_answer button").click(function(evt){
+		jQuery('#get_answer').hide();
+		jQuery('#answer').show();
+	});
+
 	jQuery("#goal input[type='radio']").change(function(value){
 		igs.payload.cfg.what = jQuery(this).val();
 		igs.post();

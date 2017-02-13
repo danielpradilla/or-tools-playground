@@ -23,12 +23,17 @@
   </head>
   <body>
 
+  <div class="ui inverted menu">
+    <div class="ui container">
+      <h1 class="header item">Grocery shopping problem</h1>
+    </div>
+  </div>
+
   <div id="problem" class="ui container">
 
-    <h1>Grocery shopping Problem</h1>
-    <p>So you walk into a grocery store with a grocery bag and some cash, to buy groceries for a week.</p>
+    <p>You walk into a grocery store with a grocery bag and some cash, to buy groceries for a week.</p>
 
-    <p>Now, a couple problems</p>
+    <p>These are the conditions:</p>
     <ol>
       <li>your bag can hold <span class="TKAdjustableNumber" data-var="maxWeight" data-step="1" data-min="1"></span> pounds.</li>
       <li>You have $<span class="TKAdjustableNumber" data-var="maxCost" data-step="10" data-min="1"></span></li>
@@ -36,7 +41,7 @@
       <li>You must purchase at least <span class="TKAdjustableNumber" data-var="minShopOunces" data-step="0.5" data-min="0.5"></span> ounces of each grocery item.</li>
     </ol>
 
-    <p>Here's your dataset:</p>
+    <p>These are the groceries that you may purchase:</p>
 
     <div class="ui two column centered grid">
       <div class="column">
@@ -44,8 +49,8 @@
           <thead>
             <tr>
             <th class="food">Food Name</th>
-            <th class="calories">Calories</th>
-            <th class="price">Price</th>
+            <th class="calories">Calories/lb</th>
+            <th class="price">Price/lb</th>
           </tr></thead>
           <tbody>
           </tbody>
@@ -53,8 +58,8 @@
         </div>
     </div>
 
-  <div class="ui divider"></div>
-
+  <h2 class="ui dividing header">Goals</h2>
+  <p>You want to find the optimal solution for any of these cases:</p>
   <div id="goal" class="ui form">
     <div class="inline fields">
       <label>Your goal:</label>
@@ -81,6 +86,9 @@
 
     <div class="ui two column centered grid">
       <div class="column">
+        <div id="get_answer">
+          <button class="positive massive ui button">Calculate Optimal Answer</button>
+        </div>
         <div id="answer" class="ui segment">
           <div class="ui active dimmer">
             <div class="ui text loader">Loading</div>
