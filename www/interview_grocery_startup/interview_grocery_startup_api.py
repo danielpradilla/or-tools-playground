@@ -7,7 +7,7 @@ import json
 import interview_grocery_startup_json as igsj 
 
 
-ALLOWED_ORIGINS = 'http://localhost'
+ALLOWED_ORIGINS = ['http://localhost']
 
 class CorsMiddleware(object):
 	def process_request(self, request, response):

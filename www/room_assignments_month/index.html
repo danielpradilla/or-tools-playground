@@ -8,13 +8,16 @@
     <!-- Custom styling -->
     <link rel="stylesheet" type="text/css" href="../bower_components/semantic/dist/semantic.min.css">
     <link rel="stylesheet" href="css/room_assignments_month.css"> 
-    <link rel="stylesheet" type="text/css" href="js/dhtmlxGrid_v50_std/codebase/dhtmlxgrid.css">
-    <link rel="stylesheet" type="text/css" href="js/dhtmlxGrid_v50_std/skins/web/dhtmlxgrid.css"/>
+    <!-- <link rel="stylesheet" type="text/css" href="js/dhtmlxGrid_v50_std/codebase/dhtmlxgrid.css"> -->
+    <!-- <link rel="stylesheet" type="text/css" href="js/dhtmlxGrid_v50_std/skins/web/dhtmlxgrid.css"/> -->
+    <link rel="stylesheet" type="text/css" href="js/dhtmlxSuite_v50_std/codebase/dhtmlx.css">
+    <link rel="stylesheet" type="text/css" href="js/dhtmlxSuite_v50_std/skins/web/dhtmlx.css"/>
     <!-- 1. Load libraries -->
     <!-- Custom js -->
     <script src="../bower_components/jquery/dist/jquery.min.js"></script>
     <script src="../bower_components/semantic/dist/semantic.min.js"></script>
-    <script src="js/dhtmlxGrid_v50_std/codebase/dhtmlxgrid.js"></script>
+    <!-- <script src="js/dhtmlxGrid_v50_std/codebase/dhtmlxgrid.js"></script> -->
+    <script src="js/dhtmlxSuite_v50_std/codebase/dhtmlx.js"></script>
     <script src="js/room_assignments_month.js"></script>
   </head>
   <body onload="ram.init()">
@@ -25,18 +28,59 @@
   </div>
   <div id="problem" class="ui main container">
 
-    <p>Below is the information of the rooms available for a 5-day work week and the meetings that need to be held throgout</p>
+    <p>Below you will find a list of rooms and the meetings requested for the month of
+    <select id="month_selector" class="ui dropdown">
+      <option value="3">March</option>
+    </select>
+    2017
+    </p>
 
-    <div class="ui two column centered grid">
+<!--     <div class="ui two column centered grid">
       <div class="column">
         <h2>Rooms</h2>
         <div id="rooms_table" class="ra-grid"></div>
       </div>
       <div class="column">
         <h2>Meetings</h2>
-        <div id="rooms_table" class="ra-grid"></div>
+        <div id="meetings_table" class="ra-grid"></div>
       </div>
+    </div -->
+
+
+<!--   <div class="ui styled fluid accordion">
+    <div class="title">
+      <i class="dropdown icon"></i>
+      Rooms
     </div>
+    <div class="content">
+      <p class="transition hidden">
+        <div id="rooms_table" class="ra-grid"></div>
+      </p>
+    </div>
+    <div class="title">
+      <i class="dropdown icon"></i>
+      Meetings
+    </div>
+    <div class="content">
+      <p class="transition hidden">
+        <div id="meetings_table" class="ra-grid"></div>
+      </p>
+    </div>
+  </div> -->
+
+    <!-- <div id="accordion_rooms_meetings"></div> -->
+
+    <div class="ui top attached tabular menu">
+      <a class="item active" data-tab="rooms_tab">Rooms</a>
+      <a class="item" data-tab="meetings_tab">Meetings</a>
+    </div>
+    <div class="ui bottom attached tab segment active" data-tab="rooms_tab">
+        <div id="rooms_table" class="ra-grid"></div>
+    </div>
+    <div class="ui bottom attached tab segment" data-tab="meetings_tab">
+        <div id="meetings_table" class="ra-grid"></div>
+    </div>
+
     <div class="ui divider"></div>
     <p>Below is the meeting schedule requested by each client</p>
     <div class="ui one column centered grid">

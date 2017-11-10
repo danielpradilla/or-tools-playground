@@ -12,7 +12,9 @@
 	min-height:400px;
 	min-width:450px;
 	overflow:hidden;
+	height: 600px;
 }
+
 
 h1 {
 	font-size:1.5rem;
@@ -26,3 +28,7 @@ h2 {
 	height: 3rem;
 }
 
+#accordion_rooms_meetings {
+	width:100%;
+	height:600px;
+}

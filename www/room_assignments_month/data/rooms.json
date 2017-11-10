@@ -1,0 +1,682 @@
+[
+ {
+   "Selected": 1,
+   "Venue": "EBU",
+   "Name": "EBU",
+   "RoomNumber": "EBU 1",
+   "NumberOfSeats": 300,
+   "BuildingCode": "EBU",
+   "NumberOfBooths": 6,
+   "RoomType": "ConferenceRoom"
+ },
+ {
+   "Selected": 1,
+   "Venue": "ILO",
+   "Name": "Other",
+   "RoomNumber": "Other",
+   "NumberOfSeats": 500,
+   "BuildingCode": "ILO",
+   "NumberOfBooths": 6,
+   "RoomType": "ConferenceRoom"
+ },
+ {
+   "Selected": 1,
+   "Venue": "MIE",
+   "Name": "Room 1",
+   "RoomNumber": "MIE/UNEP Room 1",
+   "NumberOfSeats": 100,
+   "BuildingCode": "MIE",
+   "NumberOfBooths": 5,
+   "RoomType": "ConferenceRoom"
+ },
+ {
+   "Selected": 1,
+   "Venue": "Other",
+   "Name": "Other",
+   "RoomNumber": "Other",
+   "NumberOfSeats": 300,
+   "BuildingCode": "",
+   "NumberOfBooths": 6,
+   "RoomType": "ConferenceRoom"
+ },
+ {
+   "Selected": 1,
+   "Venue": "Other",
+   "Name": "To Be Determined",
+   "RoomNumber": "TBD",
+   "NumberOfSeats": 100,
+   "BuildingCode": "TBD",
+   "NumberOfBooths": 6,
+   "RoomType": "ConferenceRoom"
+ },
+ {
+   "Selected": 1,
+   "Venue": "Palais des Nations",
+   "Name": "A.239 (Concordia)",
+   "RoomNumber": "A.239",
+   "NumberOfSeats": 20,
+   "BuildingCode": "A",
+   "NumberOfBooths": 0,
+   "RoomType": "ConferenceRoom"
+ },
+ {
+   "Selected": 1,
+   "Venue": "Palais des Nations",
+   "Name": "A.261 (Concordia)",
+   "RoomNumber": "A.261",
+   "NumberOfSeats": 20,
+   "BuildingCode": "A",
+   "NumberOfBooths": 0,
+   "RoomType": "ConferenceRoom"
+ },
+ {
+   "Selected": 1,
+   "Venue": "Palais des Nations",
+   "Name": "Assembly Hall",
+   "RoomNumber": "AH",
+   "NumberOfSeats": 1939,
+   "BuildingCode": "A",
+   "NumberOfBooths": 15,
+   "RoomType": "ConferenceRoom"
+ },
+ {
+   "Selected": 1,
+   "Venue": "Palais des Nations",
+   "Name": "Concordia 1 - Conference (Layout C)",
+   "RoomNumber": "Concordia 1 (C)",
+   "NumberOfSeats": 80,
+   "BuildingCode": "A",
+   "NumberOfBooths": 2,
+   "RoomType": "ConferenceRoom"
+ },
+ {
+   "Selected": 1,
+   "Venue": "Palais des Nations",
+   "Name": "Concordia 1 - Parliamentary (Layout A)",
+   "RoomNumber": "Concordia 1 (A)",
+   "NumberOfSeats": 72,
+   "BuildingCode": "A",
+   "NumberOfBooths": 2,
+   "RoomType": "ConferenceRoom"
+ },
+ {
+   "Selected": 1,
+   "Venue": "Palais des Nations",
+   "Name": "Concordia 1 - Square (Layout B)",
+   "RoomNumber": "Concordia 1 (B)",
+   "NumberOfSeats": 52,
+   "BuildingCode": "A",
+   "NumberOfBooths": 2,
+   "RoomType": "ConferenceRoom"
+ },
+ {
+   "Selected": 1,
+   "Venue": "Palais des Nations",
+   "Name": "Concordia 2",
+   "RoomNumber": "Concordia 2",
+   "NumberOfSeats": 12,
+   "BuildingCode": "A",
+   "NumberOfBooths": 0,
+   "RoomType": "ConferenceRoom"
+ },
+ {
+   "Selected": 1,
+   "Venue": "Palais des Nations",
+   "Name": "Concordia 3",
+   "RoomNumber": "Concordia 3",
+   "NumberOfSeats": 12,
+   "BuildingCode": "A",
+   "NumberOfBooths": 0,
+   "RoomType": "ConferenceRoom"
+ },
+ {
+   "Selected": 1,
+   "Venue": "Palais des Nations",
+   "Name": "Concordia 4 - Conference (Layout A)",
+   "RoomNumber": "Concordia 4 (A)",
+   "NumberOfSeats": 48,
+   "BuildingCode": "A",
+   "NumberOfBooths": 0,
+   "RoomType": "ConferenceRoom"
+ },
+ {
+   "Selected": 1,
+   "Venue": "Palais des Nations",
+   "Name": "Concordia 4 - Square (Layout C)",
+   "RoomNumber": "Concordia 4 (C)",
+   "NumberOfSeats": 32,
+   "BuildingCode": "A",
+   "NumberOfBooths": 1,
+   "RoomType": "ConferenceRoom"
+ },
+ {
+   "Selected": 1,
+   "Venue": "Palais des Nations",
+   "Name": "Concordia 4 - U-Shape (Layout B)",
+   "RoomNumber": "Concordia 4 (B)",
+   "NumberOfSeats": 20,
+   "BuildingCode": "A",
+   "NumberOfBooths": 0,
+   "RoomType": "ConferenceRoom"
+ },
+ {
+   "Selected": 1,
+   "Venue": "Palais des Nations",
+   "Name": "Concordia 5 - Conference (Layout A)",
+   "RoomNumber": "Concordia 5 (A)",
+   "NumberOfSeats": 36,
+   "BuildingCode": "A",
+   "NumberOfBooths": 0,
+   "RoomType": "ConferenceRoom"
+ },
+ {
+   "Selected": 1,
+   "Venue": "Palais des Nations",
+   "Name": "Concordia 5 - Square (Layout C)",
+   "RoomNumber": "Concordia 5 (C)",
+   "NumberOfSeats": 32,
+   "BuildingCode": "A",
+   "NumberOfBooths": 1,
+   "RoomType": "ConferenceRoom"
+ },
+ {
+   "Selected": 1,
+   "Venue": "Palais des Nations",
+   "Name": "Concordia 5 - U-Shape (Layout B)",
+   "RoomNumber": "Concordia 5 (B)",
+   "NumberOfSeats": 20,
+   "BuildingCode": "A",
+   "NumberOfBooths": 0,
+   "RoomType": "ConferenceRoom"
+ },
+ {
+   "Selected": 1,
+   "Venue": "Palais des Nations",
+   "Name": "Council Chamber",
+   "RoomNumber": "CC",
+   "NumberOfSeats": 456,
+   "BuildingCode": "C",
+   "NumberOfBooths": 6,
+   "RoomType": "ConferenceRoom"
+ },
+ {
+   "Selected": 1,
+   "Venue": "Palais des Nations",
+   "Name": "Courtroom",
+   "RoomNumber": "S.5-7",
+   "NumberOfSeats": 12,
+   "BuildingCode": "S",
+   "NumberOfBooths": 0,
+   "RoomType": "ConferenceRoom"
+ },
+ {
+   "Selected": 1,
+   "Venue": "Palais des Nations",
+   "Name": "Courtroom",
+   "RoomNumber": "S6",
+   "NumberOfSeats": 20,
+   "BuildingCode": "S",
+   "NumberOfBooths": 2,
+   "RoomType": "ConferenceRoom"
+ },
+ {
+   "Selected": 1,
+   "Venue": "Palais des Nations",
+   "Name": "Czech and Slovak Room",
+   "RoomNumber": "Czech and Slovak Room",
+   "NumberOfSeats": 30,
+   "BuildingCode": "C",
+   "NumberOfBooths": 0,
+   "RoomType": "ConferenceRoom"
+ },
+ {
+   "Selected": 1,
+   "Venue": "Palais des Nations",
+   "Name": "Other",
+   "RoomNumber": "Other",
+   "NumberOfSeats": 1,
+   "BuildingCode": "",
+   "NumberOfBooths": 0,
+   "RoomType": "ConferenceRoom"
+ },
+ {
+   "Selected": 1,
+   "Venue": "Palais des Nations",
+   "Name": "other",
+   "RoomNumber": "other",
+   "NumberOfSeats": 30,
+   "BuildingCode": "Geneva",
+   "NumberOfBooths": 6,
+   "RoomType": "ConferenceRoom"
+ },
+ {
+   "Selected": 1,
+   "Venue": "Palais des Nations",
+   "Name": "Room C.308",
+   "RoomNumber": "C.308",
+   "NumberOfSeats": 10,
+   "BuildingCode": "C",
+   "NumberOfBooths": 1,
+   "RoomType": "ConferenceRoom"
+ },
+ {
+   "Selected": 1,
+   "Venue": "Palais des Nations",
+   "Name": "Room I",
+   "RoomNumber": "I",
+   "NumberOfSeats": 71,
+   "BuildingCode": "C",
+   "NumberOfBooths": 1,
+   "RoomType": "ConferenceRoom"
+ },
+ {
+   "Selected": 1,
+   "Venue": "Palais des Nations",
+   "Name": "Room II",
+   "RoomNumber": "II",
+   "NumberOfSeats": 22,
+   "BuildingCode": "C",
+   "NumberOfBooths": 1,
+   "RoomType": "ConferenceRoom"
+ },
+ {
+   "Selected": 1,
+   "Venue": "Palais des Nations",
+   "Name": "Room III",
+   "RoomNumber": "III",
+   "NumberOfSeats": 198,
+   "BuildingCode": "AC",
+   "NumberOfBooths": 6,
+   "RoomType": "ConferenceRoom"
+ },
+ {
+   "Selected": 1,
+   "Venue": "Palais des Nations",
+   "Name": "Room IV",
+   "RoomNumber": "IV",
+   "NumberOfSeats": 61,
+   "BuildingCode": "C",
+   "NumberOfBooths": 1,
+   "RoomType": "ConferenceRoom"
+ },
+ {
+   "Selected": 1,
+   "Venue": "Palais des Nations",
+   "Name": "Room IX",
+   "RoomNumber": "IX",
+   "NumberOfSeats": 108,
+   "BuildingCode": "A",
+   "NumberOfBooths": 5,
+   "RoomType": "ConferenceRoom"
+ },
+ {
+   "Selected": 1,
+   "Venue": "Palais des Nations",
+   "Name": "Room S1",
+   "RoomNumber": "S1",
+   "NumberOfSeats": 22,
+   "BuildingCode": "A",
+   "NumberOfBooths": 0,
+   "RoomType": "ConferenceRoom"
+ },
+ {
+   "Selected": 1,
+   "Venue": "Palais des Nations",
+   "Name": "Room S3, Video",
+   "RoomNumber": "S3",
+   "NumberOfSeats": 25,
+   "BuildingCode": "S",
+   "NumberOfBooths": 0,
+   "RoomType": "ConferenceRoom"
+ },
+ {
+   "Selected": 1,
+   "Venue": "Palais des Nations",
+   "Name": "Room S4",
+   "RoomNumber": "S4",
+   "NumberOfSeats": 50,
+   "BuildingCode": "S",
+   "NumberOfBooths": 0,
+   "RoomType": "ConferenceRoom"
+ },
+ {
+   "Selected": 1,
+   "Venue": "Palais des Nations",
+   "Name": "Room V",
+   "RoomNumber": "V",
+   "NumberOfSeats": 190,
+   "BuildingCode": "A",
+   "NumberOfBooths": 6,
+   "RoomType": "ConferenceRoom"
+ },
+ {
+   "Selected": 1,
+   "Venue": "Palais des Nations",
+   "Name": "Room VII",
+   "RoomNumber": "VII",
+   "NumberOfSeats": 223,
+   "BuildingCode": "A",
+   "NumberOfBooths": 6,
+   "RoomType": "ConferenceRoom"
+ },
+ {
+   "Selected": 1,
+   "Venue": "Palais des Nations",
+   "Name": "Room VIII",
+   "RoomNumber": "VIII",
+   "NumberOfSeats": 126,
+   "BuildingCode": "A",
+   "NumberOfBooths": 5,
+   "RoomType": "ConferenceRoom"
+ },
+ {
+   "Selected": 1,
+   "Venue": "Palais des Nations",
+   "Name": "Room X",
+   "RoomNumber": "X",
+   "NumberOfSeats": 26,
+   "BuildingCode": "A",
+   "NumberOfBooths": 1,
+   "RoomType": "ConferenceRoom"
+ },
+ {
+   "Selected": 1,
+   "Venue": "Palais des Nations",
+   "Name": "Room XI",
+   "RoomNumber": "XI",
+   "NumberOfSeats": 173,
+   "BuildingCode": "A",
+   "NumberOfBooths": 5,
+   "RoomType": "ConferenceRoom"
+ },
+ {
+   "Selected": 1,
+   "Venue": "Palais des Nations",
+   "Name": "Room XII",
+   "RoomNumber": "XII",
+   "NumberOfSeats": 282,
+   "BuildingCode": "A",
+   "NumberOfBooths": 6,
+   "RoomType": "ConferenceRoom"
+ },
+ {
+   "Selected": 1,
+   "Venue": "Palais des Nations",
+   "Name": "Room XIV, Cinema",
+   "RoomNumber": "XIV",
+   "NumberOfSeats": 135,
+   "BuildingCode": "A",
+   "NumberOfBooths": 2,
+   "RoomType": "ConferenceRoom"
+ },
+ {
+   "Selected": 1,
+   "Venue": "Palais des Nations",
+   "Name": "Room XIX",
+   "RoomNumber": "XIX",
+   "NumberOfSeats": 941,
+   "BuildingCode": "E",
+   "NumberOfBooths": 6,
+   "RoomType": "ConferenceRoom"
+ },
+ {
+   "Selected": 1,
+   "Venue": "Palais des Nations",
+   "Name": "Room XV",
+   "RoomNumber": "XV",
+   "NumberOfSeats": 40,
+   "BuildingCode": "A",
+   "NumberOfBooths": 1,
+   "RoomType": "ConferenceRoom"
+ },
+ {
+   "Selected": 1,
+   "Venue": "Palais des Nations",
+   "Name": "Room XVI",
+   "RoomNumber": "XVI",
+   "NumberOfSeats": 329,
+   "BuildingCode": "AS",
+   "NumberOfBooths": 6,
+   "RoomType": "ConferenceRoom"
+ },
+ {
+   "Selected": 1,
+   "Venue": "Palais des Nations",
+   "Name": "Room XVII",
+   "RoomNumber": "XVII",
+   "NumberOfSeats": 439,
+   "BuildingCode": "E",
+   "NumberOfBooths": 6,
+   "RoomType": "ConferenceRoom"
+ },
+ {
+   "Selected": 1,
+   "Venue": "Palais des Nations",
+   "Name": "Room XVIII",
+   "RoomNumber": "XVIII",
+   "NumberOfSeats": 641,
+   "BuildingCode": "E",
+   "NumberOfBooths": 6,
+   "RoomType": "ConferenceRoom"
+ },
+ {
+   "Selected": 1,
+   "Venue": "Palais des Nations",
+   "Name": "Room XX",
+   "RoomNumber": "XX",
+   "NumberOfSeats": 754,
+   "BuildingCode": "E",
+   "NumberOfBooths": 6,
+   "RoomType": "ConferenceRoom"
+ },
+ {
+   "Selected": 1,
+   "Venue": "Palais des Nations",
+   "Name": "Room XXI",
+   "RoomNumber": "XXI",
+   "NumberOfSeats": 322,
+   "BuildingCode": "E",
+   "NumberOfBooths": 6,
+   "RoomType": "ConferenceRoom"
+ },
+ {
+   "Selected": 1,
+   "Venue": "Palais des Nations",
+   "Name": "Room XXII",
+   "RoomNumber": "XXII",
+   "NumberOfSeats": 130,
+   "BuildingCode": "E",
+   "NumberOfBooths": 5,
+   "RoomType": "ConferenceRoom"
+ },
+ {
+   "Selected": 1,
+   "Venue": "Palais des Nations",
+   "Name": "Room XXIII",
+   "RoomNumber": "XXIII",
+   "NumberOfSeats": 260,
+   "BuildingCode": "E",
+   "NumberOfBooths": 5,
+   "RoomType": "ConferenceRoom"
+ },
+ {
+   "Selected": 1,
+   "Venue": "Palais des Nations",
+   "Name": "Room XXIV",
+   "RoomNumber": "XXIV",
+   "NumberOfSeats": 260,
+   "BuildingCode": "E",
+   "NumberOfBooths": 5,
+   "RoomType": "ConferenceRoom"
+ },
+ {
+   "Selected": 1,
+   "Venue": "Palais des Nations",
+   "Name": "Room XXV",
+   "RoomNumber": "XXV",
+   "NumberOfSeats": 130,
+   "BuildingCode": "E",
+   "NumberOfBooths": 5,
+   "RoomType": "ConferenceRoom"
+ },
+ {
+   "Selected": 1,
+   "Venue": "Palais des Nations",
+   "Name": "Room XXVI",
+   "RoomNumber": "XXVI",
+   "NumberOfSeats": 322,
+   "BuildingCode": "E",
+   "NumberOfBooths": 6,
+   "RoomType": "ConferenceRoom"
+ },
+ {
+   "Selected": 1,
+   "Venue": "Palais des Nations",
+   "Name": "Room XXVII",
+   "RoomNumber": "XXVII",
+   "NumberOfSeats": 100,
+   "BuildingCode": "E",
+   "NumberOfBooths": 5,
+   "RoomType": "ConferenceRoom"
+ },
+ {
+   "Selected": 1,
+   "Venue": "Palais des Nations",
+   "Name": "Salle VI",
+   "RoomNumber": "VI",
+   "NumberOfSeats": 12,
+   "BuildingCode": "A",
+   "NumberOfBooths": 0,
+   "RoomType": "ConferenceRoom"
+ },
+ {
+   "Selected": 1,
+   "Venue": "Palais des Nations",
+   "Name": "Salon russe",
+   "RoomNumber": "Salon russe",
+   "NumberOfSeats": 9,
+   "BuildingCode": "C",
+   "NumberOfBooths": 0,
+   "RoomType": "ConferenceRoom"
+ },
+ {
+   "Selected": 1,
+   "Venue": "Palais Wilson",
+   "Name": "Other",
+   "RoomNumber": "Other",
+   "NumberOfSeats": 1,
+   "BuildingCode": "",
+   "NumberOfBooths": 0,
+   "RoomType": "ConferenceRoom"
+ },
+ {
+   "Selected": 1,
+   "Venue": "Palais Wilson",
+   "Name": "Palais Wilson 1st floor",
+   "RoomNumber": "PW 1st",
+   "NumberOfSeats": 96,
+   "BuildingCode": "PW",
+   "NumberOfBooths": 6,
+   "RoomType": "ConferenceRoom"
+ },
+ {
+   "Selected": 1,
+   "Venue": "Palais Wilson",
+   "Name": "Palais Wilson ground floor",
+   "RoomNumber": "PW gr",
+   "NumberOfSeats": 138,
+   "BuildingCode": "PW",
+   "NumberOfBooths": 6,
+   "RoomType": "ConferenceRoom"
+ },
+ {
+   "Selected": 1,
+   "Venue": "WHO",
+   "Name": "Room A",
+   "RoomNumber": "WHO A",
+   "NumberOfSeats": 97,
+   "BuildingCode": "Main Building",
+   "NumberOfBooths": 6,
+   "RoomType": "ConferenceRoom"
+ },
+ {
+   "Selected": 1,
+   "Venue": "WHO",
+   "Name": "Room B",
+   "RoomNumber": "WHO B",
+   "NumberOfSeats": 79,
+   "BuildingCode": "Main Building",
+   "NumberOfBooths": 3,
+   "RoomType": "ConferenceRoom"
+ },
+ {
+   "Selected": 1,
+   "Venue": "WHO",
+   "Name": "Room C",
+   "RoomNumber": "WHO C",
+   "NumberOfSeats": 97,
+   "BuildingCode": "Main Building",
+   "NumberOfBooths": 6,
+   "RoomType": "ConferenceRoom"
+ },
+ {
+   "Selected": 1,
+   "Venue": "WHO",
+   "Name": "Room D",
+   "RoomNumber": "WHO D",
+   "NumberOfSeats": 79,
+   "BuildingCode": "Main Building",
+   "NumberOfBooths": 6,
+   "RoomType": "ConferenceRoom"
+ },
+ {
+   "Selected": 1,
+   "Venue": "WHO",
+   "Name": "Room EB",
+   "RoomNumber": "WHO EB",
+   "NumberOfSeats": 320,
+   "BuildingCode": "Executive Board Block",
+   "NumberOfBooths": 6,
+   "RoomType": "ConferenceRoom"
+ },
+ {
+   "Selected": 1,
+   "Venue": "WIPO",
+   "Name": "A",
+   "RoomNumber": "WIPO Room A",
+   "NumberOfSeats": 1,
+   "BuildingCode": "WIPO",
+   "NumberOfBooths": 0,
+   "RoomType": "ConferenceRoom"
+ },
+ {
+   "Selected": 1,
+   "Venue": "WIPO",
+   "Name": "Other",
+   "RoomNumber": "1",
+   "NumberOfSeats": 1,
+   "BuildingCode": "Other",
+   "NumberOfBooths": 0,
+   "RoomType": "ConferenceRoom"
+ },
+ {
+   "Selected": 1,
+   "Venue": "WMO",
+   "Name": "Salle Obasi (WMO)",
+   "RoomNumber": "Salle Obasi (WMO)",
+   "NumberOfSeats": 275,
+   "BuildingCode": "WMO",
+   "NumberOfBooths": 8,
+   "RoomType": "ConferenceRoom"
+ },
+ {
+   "Selected": 1,
+   "Venue": "WTO (Geneva)",
+   "Name": "WTO (Geneva)",
+   "RoomNumber": "Other",
+   "NumberOfSeats": 500,
+   "BuildingCode": "tbc",
+   "NumberOfBooths": 6,
+   "RoomType": "ConferenceRoom"
+ }
+]

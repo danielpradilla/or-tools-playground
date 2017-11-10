@@ -1,7 +1,7 @@
 var jQuery = jQuery.noConflict(); 
 
 var igs={};
-
+var URL='http://localhost:18000/gunicorn/igsapi';
 igs.payload = {
 					"cfg": {"what": "cost",
 							"maxWeight": 10,
@@ -188,7 +188,7 @@ igs.post = function() {
 
     jQuery.ajax({
       type: "POST",
-      url: "/gunicorn/igsapi",
+      url: URL,
       dataType: "json",
       data: JSON.stringify(igs.payload),
 

@@ -1,14 +1,18 @@
 let ram = {};
 
+ram.roomData=[];
+ram.meetingData=[];
+ram.accordionRoomsMeetings = {};
 
 ram.process_custom_json = function(data){
 	this._parsing=true;
 	data = data.responseText || data;
+
 	if (typeof data == "string"){
 		eval("dhtmlx.temp="+data+";");
 		data = dhtmlx.temp;
 	}
-console.log(data);
+	//console.log(data);
 	//parse, similar to the xml based sample
 	if (data.data)
 		data = data.data;
@@ -43,34 +47,95 @@ ram.initGrid = function(grid, config) {
 
 	grid._process_custom_json = this.process_custom_json
 
-	// fetch(config.source)
-	// 	.then(response=>response.json())
-	// 	.then(data=>grid.load(data,"custom_json"))
-	// 	// .then(data => console.log(data)) 
-
-	grid.load(config.source,"custom_json");
+	grid.parse(config.source,"custom_json");
 
 };
 
+ram.initDataProcessor = function(grid) {
+	let dp = new dataProcessor("data/connector.php");
+	dp.init(grid);
+	dp.setTransactionMode("REST");
+}
+
+ram.processOnCheck = function(datasetName,columnIds,rId,cInd,state){
+	const selected = columnIds.split(',')[cInd];
+	ram[datasetName][rId][selected]=state*1;
+	console.log(ram[dataSetName][rId]);
+}
+
 ram.initRoomsGrid = function() {
-	let rooms_table = new dhtmlXGridObject('rooms_table');
+	let grid = new dhtmlXGridObject('rooms_table');
+	// let grid = this.accordionRoomsMeetings.cells("rooms_table").attachGrid();
 	let config = {
-		source: "data/meeting_rooms.json",
+		source: this.roomData,
 		header: "Select,Venue,Name,Seats,Booths",
 		columnIds: "Selected,Venue,Name,NumberOfSeats,NumberOfBooths",
 		initWidths: "45,130,160,45,50",
 		colAligns: "center,left,left,right,right",
 		colTypes: "ch,ro,ro,ed,ed",
-		colSorting: "str,str,int,int"
+		colSorting: "int,str,str,int,int"
 	}
-	this.initGrid(rooms_table, config);
+	this.initGrid(grid, config);
 
-	rooms_table.attachEvent("onCheck", function(rId,cInd,state){
-		console.log([rId, cInd, state])
+	grid.attachEvent("onCheck", function(rId,cInd,state){
+		processOnCheck('roomData',config.columnIds,rId,cInd,state);
 	});
+
+	this.initDataProcessor(grid);
+
+	return grid;
 }
 
+ram.initMeetingsGrid = function() {
+	let grid = new dhtmlXGridObject('meetings_table');
+	// let grid = this.accordionRoomsMeetings.cells("meetings_table").attachGrid();
+	let config = {
+		source: this.meetingData,
+		header: "Select,Date,Client,Title,Participants,Time Slot",
+		columnIds: "SELECTED,MEETING_DATE,ORGAN_ACRONYM,MEETING_TITLE,MEETING_PARTICIPANTS,TIME_SLOT",
+		initWidths: "45,100,300,300,60,50",
+		colAligns: "center,right,left,left,right,center",
+		colTypes: "ch,ro,ro,ro,ed,ed",
+		colSorting: "date,str,str,int,int"
+	}
+	this.initGrid(grid, config);
+
+	grid.attachEvent("onCheck", function(rId,cInd,state){
+		processOnCheck('meetingData',config.columnIds,rId,cInd,state);
+	});
+
+	this.initDataProcessor(grid);
+
+	return grid;
+}
 
 ram.init = function() {
-	this.initRoomsGrid();
+	// $('.ui.accordion').accordion('exclusive', false);
+
+	
+	// this.accordionRoomsMeetings = new dhtmlXAccordion({
+	// 	parent: "accordion_rooms_meetings",
+	// 	multi_mode: true,
+	// 	items: [
+	// 		{id: "rooms_table", text: "Rooms", height:"*"},
+	// 		{id: "meetings_table", text: "Meetings", open:false, height:"*"}
+	// 	]
+	// });
+
+	$('.menu .item').tab();
+	
+	fetch('data/meeting_rooms.json')
+	.then(response=>response.json())
+	.then(data=>{
+		this.roomData = data;
+		let grid = this.initRoomsGrid();
+	});
+	fetch('data/meetings.json')
+	.then(response=>response.json())
+	.then(data=>{
+		this.meetingData = data;
+		let grid = this.initMeetingsGrid();
+	});
+
+
 }

@@ -15,6 +15,6 @@ From within the directory
 docker build --no-cache -t danielpradilla/or-tools .
 
 and then from the root of the application
-docker run -v `pwd`/www:/app/www -p 5000:80 --name or-tools-gunicorn  danielpradilla/or-tools 
+docker run -v `pwd`/www:/app/www -p 5000:80 -d --name or-tools-gunicorn  danielpradilla/or-tools 
 
 (change 5000 for the port that you wish to use)
